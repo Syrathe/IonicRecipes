@@ -31,10 +31,9 @@ export class RecipesService {
     return this.recipes.filter(recipe => recipe.id ==  recipeId )[0];
   }
 
-  deleteRecipe(loadedRecipe:Recipe){
+  deleteRecipe(id:string){
     this.recipes = this.recipes.filter(recipe => {
-      console.log("will delete ", loadedRecipe.id)
-      return recipe.id !== loadedRecipe.id;
+      return recipe.id !== id;
     });
     console.log(this.getAllRecipes())
   }
